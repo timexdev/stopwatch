@@ -1,4 +1,4 @@
-var [seconds, minutes, hours] = [0,0, 0, 0]
+var [seconds, minutes, hours] = [0, 0, 0]
 let displayTime = document.getElementById('displayTime');
 let timer = null;
 
