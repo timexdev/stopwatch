@@ -11,16 +11,13 @@
     <div class="stopwatchContainer">
         <h1>STOPWATCH</h1>
         <div class="counterContainer">
-        <code>
-            <span id="hours">00</span> <span>h</span> :
-            <span id="minutes">00</span> <span>m</span> :
-            <span id="seconds">00</span> <span>s</span> :
-            <span style="font-size: 15px;" id="milisecs">00</span> 
+        <code id="displayTime">
+            00h:00m:00s
         </code>
         </div>
 
         <div class="buttonContainer">
-            <button onclick="start()">Start</button>
+            <button id="startBtn" onclick="start()">Start</button>
             <button onclick="stop()">Stop</button>
             <button onclick="reset()">Reset</button>
         </div>
