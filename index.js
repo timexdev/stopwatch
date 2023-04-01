@@ -1,43 +1,57 @@
-var [seconds, minutes, hours] = [0, 0, 0]
-let displayTime = document.getElementById('displayTime');
-let timer = null;
+var [miliseconds, seconds, minutes, hours] = [0, 0, 0, 0]
+var timeDisplay = document.getElementById('timeDisplay');
+var timer = null;
 
-function watch(){
-    seconds++;
-    if(seconds == 60){
-        seconds = 0;
-        minutes++;
-        if(minutes == 60){
-            minutes = 0;
-            hours++;
+function watchCount(){
+    miliseconds++;
+    if(miliseconds == 100){
+        miliseconds = 0;
+        seconds++;
+        if(seconds == 60){
+            seconds = 0;
+            minutes++;
+            if(minutes == 60){
+                minutes = 0;
+                hours++;
+            }
         }
     }
 
-    let hr = hours < 10 ? "0" + hours : hours;
-    let min = minutes < 10 ? "0" + minutes : minutes;
+    let hr = hours
+        if(hours < 10) {hr = "0" + hours;} else{hours}
+    let min = minutes
+        if (minutes < 10) {min = "0" + minutes} else{minutes}
     let sec = seconds < 10 ? "0" + seconds : seconds;
+    let milisec = miliseconds < 10 ? "0" + miliseconds : miliseconds;
 
-    displayTime.innerHTML = hr +"h:"+ min +"m:"+ sec + "s";
+    document.getElementById('timeDisplay').innerHTML = hr +"h:"+ min +"m:"+ sec + "s:" + milisec;
 }
 
-function start(){
+const start = () =>{
     if(timer!== null){
         clearInterval(timer);
     }
-    timer = setInterval(watch, 1000);
+    timer = setInterval(watchCount, 10);
 }
 
-function  stop(){
+const  stop = () =>{
     clearInterval(timer);
 }
 
-function reset(){
+const reset = () =>{
     clearInterval(timer);
-    [seconds, minutes, hours] = [0, 0, 0];
-    displayTime.innerHTML = "00h:00m:00s";
+    [miliseconds, seconds, minutes, hours] = [0, 0, 0, 0];
+    timeDisplay.innerHTML = "00h:00m:00s:00";
 }
 
-    
+   
+
+
+
+
+
+
+
 //     var timer1,timer2,timer3,timer4 = null;
     
 // //    function that will be excuted on click of the start button
@@ -116,3 +130,10 @@ function reset(){
 //         clearInterval(timer3)
 //         clearInterval(timer4)
 //     }
+
+
+
+    // let hr = hours < 10 ? "0" + hours : hours;
+    // let min = minutes < 10 ? "0" + minutes : minutes;
+    // let sec = seconds < 10 ? "0" + seconds : seconds;
+    // let milisec = miliseconds < 10 ? "0" + miliseconds : miliseconds;
