@@ -18,7 +18,7 @@ function watchCount(){
     }
 
     let hr = hours
-        if(hours < 10) {hr = "0" + hours;} else{hours}
+        if(hours < 10) {hr = "0" + hours} else{hours}
     let min = minutes
         if (minutes < 10) {min = "0" + minutes} else{minutes}
     let sec = seconds < 10 ? "0" + seconds : seconds;
