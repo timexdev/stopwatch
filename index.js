@@ -1,6 +1,6 @@
 var [seconds, minutes, hours] = [0, 0, 0]
-let timeDisplay = document.getElementById('timeDisplay');
-let timer = null;
+var timeDisplay = document.getElementById('timeDisplay');
+var timer = null;
 
 function watchCounter(){
     seconds++;
